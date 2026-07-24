@@ -1,0 +1,50 @@
+generated: '2026-07-24'
+method: derived
+source: fhir/ncts-terminology-server-capabilitystatement.json + HL7 FHIR R4 resource model
+note: >-
+  Entity-relationship model of the FHIR terminology resources served by the NCTS FHIR
+  Terminology Server, derived from the resources listed in its CapabilityStatement and
+  the standard FHIR R4 references between them.
+entities:
+  - name: CodeSystem
+    interactions: [read, search-type]
+    description: Defines a set of concepts with codes, displays and properties (e.g. SNOMED CT-AU, AMT, LOINC).
+  - name: ValueSet
+    interactions: [read, search-type]
+    operations: [$expand, $validate-code]
+    description: Selects a set of codes drawn from one or more CodeSystems for a particular use.
+  - name: ConceptMap
+    interactions: [read, search-type]
+    operations: [$translate]
+    description: Maps concepts between a source and target ValueSet/CodeSystem.
+  - name: StructureDefinition
+    interactions: [read, vread, search-type, create, update, patch, delete, history-instance, history-type]
+    description: Defines FHIR structures, profiles and extensions.
+  - name: OperationDefinition
+    interactions: [read]
+    description: Defines the terminology operations supported by the server.
+relationships:
+  - from: ValueSet
+    to: CodeSystem
+    type: has_many
+    via: compose.include.system
+    note: A ValueSet includes/excludes concepts drawn from one or more CodeSystems.
+  - from: ConceptMap
+    to: ValueSet
+    type: belongs_to
+    via: sourceUri / targetUri
+    note: A ConceptMap references source and target ValueSets (or CodeSystems).
+  - from: ConceptMap
+    to: CodeSystem
+    type: belongs_to
+    via: group.source / group.target
+  - from: CodeSystem
+    to: ValueSet
+    type: has_one
+    via: valueSet
+    note: A CodeSystem may reference a ValueSet enumerating all its concepts ("all codes").
+  - from: StructureDefinition
+    to: ValueSet
+    type: has_many
+    via: element.binding.valueSet
+    note: Element bindings reference ValueSets for coded values.

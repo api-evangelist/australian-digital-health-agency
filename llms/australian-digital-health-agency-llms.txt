@@ -1,0 +1,33 @@
+# Australian Digital Health Agency (ADHA)
+
+> The Australian Government statutory agency responsible for national digital health infrastructure and standards. ADHA operates and stewards My Health Record, the Healthcare Identifiers (HI) Service, the National Authentication Service for Health (NASH) PKI, electronic prescribing, and the National Clinical Terminology Service (NCTS). Its developer surface is centred on HL7 FHIR R4 (alongside legacy HL7 CDA document exchange) and is gated behind registration, conformance testing, and NASH PKI issuance. Home market: Australia.
+
+## APIs
+
+- [My Health Record FHIR Gateway (B2B)](https://implementer.digitalhealth.gov.au/resources/services/my-health-record/my-health-record-fhir-gateway): B2B FHIR gateway for conformant clinical software to read/upload clinical documents to My Health Record. Auth: NASH SHA-2 PKI over mutual TLS.
+- [My Health Record FHIR Mobile Gateway](https://developer.digitalhealth.gov.au/developer-guide/introduction-my-health-record-fhir-gateway-developer-guide-1): FHIR gateway for mobile/consumer apps to retrieve documents on behalf of individuals.
+- [NCTS FHIR Terminology Server](https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/): FHIR R4 terminology server (CSIRO Ontoserver) over SNOMED CT-AU, AMT, LOINC. Base: https://api.healthterminologies.gov.au/integration/R4/fhir. Auth: SMART-on-FHIR OAuth2.
+- [NCTS National Syndication Server](https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/): Atom Publishing Protocol feed for downloading FHIR terminology bundles. Base: https://api.healthterminologies.gov.au/syndication/v1.
+- [Electronic Prescribing](https://implementer.digitalhealth.gov.au/resources/services/electronic-prescribing): Electronic prescriptions, dispensing and Active Script List conformance profiles. Auth: NASH PKI + HI Service.
+- [Healthcare Identifiers (HI) Service](https://implementer.digitalhealth.gov.au/resources/services/healthcare-identifiers-service-hi): National identifiers for individuals (IHI), providers (HPI-I) and organisations (HPI-O). Auth: NASH PKI.
+
+## Specs & Contracts
+
+- [NCTS FHIR CapabilityStatement](https://api.healthterminologies.gov.au/integration/R4/fhir/metadata): live FHIR R4 conformance statement (Ontoserver).
+- [SMART configuration](https://api.healthterminologies.gov.au/integration/R4/fhir/.well-known/smart-configuration): SMART-on-FHIR discovery (authorize/token endpoints, scopes).
+- CapabilityStatement (harvested): fhir/ncts-terminology-server-capabilitystatement.json
+- Authentication profile: authentication/australian-digital-health-agency-authentication.yml
+- OAuth scopes: scopes/australian-digital-health-agency-scopes.yml
+- Conformance: conformance/australian-digital-health-agency-conformance.yml
+- API conventions: conventions/australian-digital-health-agency-conventions.yml
+- Error catalog (OperationOutcome): errors/australian-digital-health-agency-problem-types.yml
+- Data model: data-model/australian-digital-health-agency-data-model.yml
+- Lifecycle: lifecycle/australian-digital-health-agency-lifecycle.yml
+
+## Docs
+
+- [Developer Portal](https://developer.digitalhealth.gov.au/)
+- [Implementer resources](https://implementer.digitalhealth.gov.au/)
+- [NASH (National Authentication Service for Health)](https://implementer.digitalhealth.gov.au/resources/services/national-authentication-service-for-health-nash)
+- [NCTS terminology-as-a-service](https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/)
+- [GitHub org (AuDigitalHealth) — sample client libraries](https://github.com/AuDigitalHealth)

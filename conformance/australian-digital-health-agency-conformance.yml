@@ -1,0 +1,46 @@
+generated: '2026-07-24'
+method: searched
+source: >-
+  fhir/ncts-terminology-server-capabilitystatement.json, apis.yml,
+  https://github.com/AuDigitalHealth/au-fhir-base,
+  https://github.com/AuDigitalHealth/au-fhir-core
+standards:
+  - id: hl7-fhir-r4
+    conforms: true
+    evidence: CapabilityStatement fhirVersion 4.0.1; FHIR R4 terminology server at /integration/R4/fhir.
+  - id: fhir-terminology-server
+    conforms: true
+    evidence: instantiates http://hl7.org/fhir/CapabilityStatement/terminology-server ($expand/$lookup/$validate-code/$translate/$closure).
+  - id: smart-on-fhir
+    conforms: true
+    evidence: CapabilityStatement rest.security service SMART-on-FHIR; smart-configuration discovery document published.
+  - id: oauth2
+    conforms: true
+    evidence: OAuth2 authorization-code flow with authorize/token endpoints (SMART-on-FHIR).
+  - id: openid-connect
+    conforms: true
+    evidence: openid + profile scopes advertised by the terminology server.
+  - id: atom-publishing-protocol
+    conforms: true
+    evidence: NCTS National Syndication Server exposes an Atom Publishing Protocol feed for terminology content bundles.
+  - id: hl7-cda
+    conforms: true
+    evidence: My Health Record document exchange maps HL7 CDA implementation guides to/from FHIR resources.
+  - id: au-base-fhir-ig
+    conforms: true
+    evidence: Aligns to the AU Base FHIR Implementation Guide (au-fhir-base) stewarded via HL7 Australia / Sparked.
+  - id: au-core-fhir-ig
+    conforms: true
+    evidence: Aligns to the AU Core FHIR Implementation Guide (au-fhir-core) under the Sparked national FHIR accelerator.
+  - id: snomed-ct
+    conforms: true
+    evidence: Serves SNOMED CT-AU code system and value sets via the NCTS terminology server.
+  - id: fhir-subscriptions-backport
+    conforms: true
+    evidence: CapabilityStatement instantiates the R4 backport-subscription-server implementation guide.
+  - id: mutual-tls
+    conforms: true
+    evidence: NASH SHA-2 PKI client certificates over mutual TLS for national record systems.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: FHIR APIs use the OperationOutcome resource for errors, not application/problem+json.

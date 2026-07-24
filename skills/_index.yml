@@ -1,0 +1,16 @@
+generated: '2026-07-24'
+method: generated
+source: fhir/ncts-terminology-server-capabilitystatement.json + NCTS syndication docs
+skills:
+  - file: australian-digital-health-agency-expand-valueset.md
+    name: Expand a value set on the NCTS FHIR terminology server
+    api: fhir/ncts-terminology-server-capabilitystatement.json
+    operations: [ValueSet/$expand]
+  - file: australian-digital-health-agency-validate-code.md
+    name: Validate a code against a value set (NCTS)
+    api: fhir/ncts-terminology-server-capabilitystatement.json
+    operations: [ValueSet/$validate-code, CodeSystem/$validate-code]
+  - file: australian-digital-health-agency-syndicate-terminology.md
+    name: Download terminology releases from the NCTS syndication feed
+    api: NCTS National Syndication Server
+    operations: [GET /syndication/v1/syndication.xml]

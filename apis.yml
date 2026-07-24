@@ -159,6 +159,8 @@ apis:
   - type: Documentation
     url: https://implementer.digitalhealth.gov.au/resources/services/healthcare-identifiers-service-hi
 common:
+- type: DomainSecurity
+  url: security/australian-digital-health-agency-domain-security.yml
 - type: Website
   url: https://www.digitalhealth.gov.au/
 - type: DeveloperPortal
@@ -175,6 +177,36 @@ common:
   url: https://implementer.digitalhealth.gov.au/resources/services/national-authentication-service-for-health-nash
 - type: Support
   url: mailto:help@digitalhealth.gov.au
+- type: GitHubOrganization
+  url: https://github.com/AuDigitalHealth
+- type: Packages
+  url: packages/australian-digital-health-agency-packages.yml
+- type: SDKs
+  url: packages/australian-digital-health-agency-packages.yml
+- type: WellKnown
+  url: well-known/australian-digital-health-agency-well-known.yml
+- type: Authentication
+  url: authentication/australian-digital-health-agency-authentication.yml
+- type: OAuthScopes
+  url: scopes/australian-digital-health-agency-scopes.yml
+- type: Conformance
+  url: conformance/australian-digital-health-agency-conformance.yml
+- type: Conventions
+  url: conventions/australian-digital-health-agency-conventions.yml
+- type: Idempotency
+  url: conventions/australian-digital-health-agency-conventions.yml
+- type: ErrorCatalog
+  url: errors/australian-digital-health-agency-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/australian-digital-health-agency-lifecycle.yml
+- type: MCPServer
+  url: mcp/australian-digital-health-agency-mcp.yml
+- type: LLMsTxt
+  url: llms/australian-digital-health-agency-llms.txt
+- type: DataModel
+  url: data-model/australian-digital-health-agency-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

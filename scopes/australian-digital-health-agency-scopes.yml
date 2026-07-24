@@ -1,0 +1,26 @@
+generated: '2026-07-24'
+method: searched
+source: well-known/australian-digital-health-agency-smart-configuration.json
+docs: https://api.healthterminologies.gov.au/integration/R4/fhir/.well-known/smart-configuration
+note: >-
+  The NCTS FHIR terminology server authenticates with SMART-on-FHIR OAuth2. Its
+  SMART discovery document advertises OpenID Connect scopes only (openid, profile);
+  as a read-oriented terminology service it does not expose SMART clinical resource
+  scopes. The national record systems (My Health Record, HI Service, e-prescribing)
+  use NASH PKI mutual TLS rather than OAuth scopes.
+schemes:
+  - name: SMART-on-FHIR-OAuth2
+    source: well-known/australian-digital-health-agency-smart-configuration.json
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://api.healthterminologies.gov.au/oauth2/login
+        tokenUrl: https://api.healthterminologies.gov.au/oauth2/token
+scopes:
+  - scope: openid
+    description: OpenID Connect authentication for the terminology server.
+    flows: [authorizationCode]
+    sources: [well-known/australian-digital-health-agency-smart-configuration.json]
+  - scope: profile
+    description: Access to basic OpenID Connect profile claims.
+    flows: [authorizationCode]
+    sources: [well-known/australian-digital-health-agency-smart-configuration.json]

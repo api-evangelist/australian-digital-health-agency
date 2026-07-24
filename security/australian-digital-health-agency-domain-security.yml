@@ -1,0 +1,26 @@
+generated: '2026-07-24'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.digitalhealth.gov.au
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  4 00:55:37 2026 GMT
+  hsts: null
+- host: implementer.digitalhealth.gov.au
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  4 00:55:37 2026 GMT
+  hsts: null
+- host: developer.digitalhealth.gov.au
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 23 21:48:59 2026 GMT
+  hsts: null
+domains:
+- domain: digitalhealth.gov.au
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

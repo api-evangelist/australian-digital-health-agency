@@ -1,0 +1,48 @@
+generated: '2026-07-24'
+method: searched
+source: >-
+  fhir/ncts-terminology-server-capabilitystatement.json + HL7 FHIR R4 RESTful API conventions
+note: >-
+  Cross-cutting request/response semantics for the ADHA FHIR surfaces. The NCTS
+  terminology server follows the HL7 FHIR R4 RESTful conventions confirmed by its
+  CapabilityStatement; the My Health Record gateways follow the same FHIR conventions
+  over NASH PKI mutual TLS.
+authentication:
+  terminology_server: SMART-on-FHIR OAuth2 (Bearer access token)
+  national_record_systems: NASH SHA-2 PKI client certificate over mutual TLS
+content_negotiation:
+  formats: [application/fhir+json, application/fhir+xml]
+  default: application/fhir+json
+  header: Accept
+  param: _format
+pagination:
+  style: fhir-bundle
+  request_params: [_count]
+  response: FHIR searchset Bundle with link relations (self, next, previous) for page traversal.
+search:
+  common_params: [_id, _lastUpdated, _tag, _security, _sort, _count]
+  resource_params: [url, version, name, status, system, identifier, publisher, context]
+concurrency_and_idempotency:
+  optimistic_locking: true
+  etag: true
+  version_read: vread supported (readHistory true, versioning versioned-update).
+  conditional_update: PUT with If-Match against the resource version (ETag) — a repeated identical update is idempotent.
+  conditional_create: If-None-Exist header prevents duplicate creation of an already-existing resource.
+  note: >-
+    FHIR write semantics are idempotent by construction — PUT (update) to a known id is
+    idempotent, and conditional create/update via If-None-Exist / If-Match ETag guard against
+    duplicate or lost-update effects. There is no vendor idempotency-key header; the FHIR
+    version/ETag mechanism is the idempotency contract.
+versioning:
+  scheme: uri-path
+  api_version: R4 (FHIR 4.0.1) under /integration/R4/
+  resource_versioning: versioned-update (per-resource meta.versionId + history)
+  content_versioning: NCTS terminology content is versioned and distributed via the syndication feed.
+error_envelope:
+  shape: FHIR OperationOutcome resource (issue[].severity / issue[].code / issue[].diagnostics)
+  catalog: errors/australian-digital-health-agency-problem-types.yml
+cross_links:
+  authentication: authentication/australian-digital-health-agency-authentication.yml
+  errors: errors/australian-digital-health-agency-problem-types.yml
+  lifecycle: lifecycle/australian-digital-health-agency-lifecycle.yml
+  scopes: scopes/australian-digital-health-agency-scopes.yml

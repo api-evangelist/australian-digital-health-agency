@@ -1,0 +1,37 @@
+generated: '2026-07-24'
+method: searched
+source: live probes of ADHA / NCTS hosts
+note: >-
+  The NCTS FHIR base publishes a real SMART-on-FHIR discovery document at the
+  FHIR-scoped .well-known path. The root .well-known namespace on the API host is
+  WAF-blocked (403); the WordPress-served public sites return an HTML application
+  shell for .well-known paths rather than machine-readable documents.
+hosts:
+  - host: https://api.healthterminologies.gov.au
+    documents:
+      - path: /integration/R4/fhir/.well-known/smart-configuration
+        status: 200
+        file: australian-digital-health-agency-smart-configuration.json
+        kind: smart-configuration
+        note: SMART-on-FHIR discovery — authorize/token endpoints + scopes_supported.
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+  - host: https://www.healthterminologies.gov.au
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        note: Returns the WordPress application HTML shell, not an RFC 9116 security.txt.
+  - host: https://implementer.digitalhealth.gov.au
+    documents:
+      - path: /.well-known/security.txt
+        status: 000
+  - host: https://developer.digitalhealth.gov.au
+    documents:
+      - path: /.well-known/security.txt
+        status: 301

@@ -1,0 +1,59 @@
+generated: '2026-07-24'
+method: derived
+source: >-
+  HL7 FHIR R4 OperationOutcome (issue-type value set) + HTTP status semantics from
+  fhir/ncts-terminology-server-capabilitystatement.json
+format: fhir-operationoutcome
+note: >-
+  ADHA FHIR APIs return errors as a FHIR OperationOutcome resource rather than
+  RFC 9457 problem+json. Each problem below pairs the HTTP status with the FHIR
+  OperationOutcome issue.code most commonly returned for that condition on a FHIR R4
+  terminology / record server. Codes are drawn from the standard FHIR issue-type value set.
+envelope:
+  resource: OperationOutcome
+  fields:
+    - issue[].severity   # fatal | error | warning | information
+    - issue[].code       # FHIR issue-type code
+    - issue[].diagnostics
+    - issue[].details
+problems:
+  - status: 400
+    issue_code: invalid
+    title: Invalid request
+    remediation: Malformed FHIR request or parameter (e.g. bad $expand/$validate-code parameters). Correct the request.
+  - status: 401
+    issue_code: security
+    title: Not authenticated
+    remediation: Present a valid SMART-on-FHIR OAuth2 Bearer token, or (for national record systems) a valid NASH PKI client certificate over mutual TLS.
+  - status: 403
+    issue_code: forbidden
+    title: Forbidden
+    remediation: The authenticated client lacks authorisation for this resource or interaction; confirm registration, conformance and consent.
+  - status: 404
+    issue_code: not-found
+    title: Resource not found
+    remediation: The requested FHIR resource, CodeSystem, ValueSet or ConceptMap does not exist (or the code is unknown to the terminology server).
+  - status: 409
+    issue_code: conflict
+    title: Version conflict
+    remediation: Optimistic-locking failure — the If-Match ETag did not match the current resource version. Re-read and retry.
+  - status: 412
+    issue_code: conflict
+    title: Precondition failed
+    remediation: A conditional create/update precondition (If-None-Exist / If-Match) was not met.
+  - status: 422
+    issue_code: processing
+    title: Unprocessable content
+    remediation: The FHIR resource or operation input failed validation ($validate-code / profile validation). Inspect OperationOutcome issue details.
+  - status: 429
+    issue_code: throttled
+    title: Too many requests
+    remediation: Rate limited; back off and retry with jitter.
+  - status: 500
+    issue_code: exception
+    title: Server error
+    remediation: Unexpected server error. Retry later; contact help@digitalhealth.gov.au if persistent.
+  - status: 503
+    issue_code: transient
+    title: Service unavailable
+    remediation: The terminology or gateway service is temporarily unavailable; retry after a delay.

@@ -1,0 +1,47 @@
+generated: '2026-07-24'
+method: searched
+source: >-
+  fhir/ncts-terminology-server-capabilitystatement.json (CapabilityStatement.rest.security),
+  well-known/australian-digital-health-agency-smart-configuration.json,
+  https://implementer.digitalhealth.gov.au/resources/services/national-authentication-service-for-health-nash
+summary:
+  types: [mutualTLS, oauth2, openIdConnect]
+  models:
+    - national-record-systems: NASH SHA-2 PKI client certificate over mutual TLS
+    - terminology-server: SMART-on-FHIR OAuth2 (authorization code) + OpenID Connect
+schemes:
+  - name: NASH-PKI-mTLS
+    type: mutualTLS
+    applies_to:
+      - My Health Record FHIR Gateway (B2B)
+      - My Health Record FHIR Mobile Gateway
+      - Healthcare Identifiers (HI) Service
+      - Electronic Prescribing
+    description: >-
+      Connections to the national record systems are authenticated with a National
+      Authentication Service for Health (NASH) SHA-2 PKI certificate presented over
+      mutual TLS. NASH certificates are issued to conformant, registered healthcare
+      organisations (identified by an HPI-O) after onboarding and conformance testing.
+    issuance: Gated — registration + conformance + NASH certificate issuance (Services Australia).
+    docs: https://implementer.digitalhealth.gov.au/resources/services/national-authentication-service-for-health-nash
+  - name: SMART-on-FHIR-OAuth2
+    type: oauth2
+    applies_to:
+      - NCTS FHIR Terminology Server
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://api.healthterminologies.gov.au/oauth2/login
+        tokenUrl: https://api.healthterminologies.gov.au/oauth2/token
+        scopes:
+          openid: OpenID Connect authentication
+          profile: Basic profile claims
+    profile: SMART-on-FHIR (http://docs.smarthealthit.org)
+    cors: true
+    sources:
+      - fhir/ncts-terminology-server-capabilitystatement.json
+      - well-known/australian-digital-health-agency-smart-configuration.json
+  - name: OpenIDConnect
+    type: openIdConnect
+    applies_to:
+      - NCTS FHIR Terminology Server
+    description: The NCTS terminology server advertises the openid scope alongside SMART-on-FHIR OAuth2.

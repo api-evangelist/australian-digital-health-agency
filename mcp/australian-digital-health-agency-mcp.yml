@@ -1,0 +1,39 @@
+generated: '2026-07-24'
+method: derived
+status: candidate
+source: fhir/ncts-terminology-server-capabilitystatement.json
+note: >-
+  No official hosted MCP server was found for ADHA. This is a CANDIDATE tool surface
+  derived from the real FHIR operations and interactions advertised by the NCTS FHIR
+  Terminology Server CapabilityStatement. Each tool maps to a documented FHIR
+  terminology operation or RESTful interaction; input schemas would follow the FHIR R4
+  parameter definitions for those operations. Not a published server.
+server:
+  name: ncts-terminology
+  transport: http
+  fhir_base: https://api.healthterminologies.gov.au/integration/R4/fhir
+tools:
+  - name: expand_valueset
+    description: Expand a ValueSet to its full list of member codes (SNOMED CT-AU / AMT / LOINC).
+    source_operation: fhir ValueSet/$expand
+  - name: validate_code
+    description: Validate that a code is a valid member of a CodeSystem or ValueSet.
+    source_operation: fhir ValueSet/$validate-code (and CodeSystem/$validate-code)
+  - name: lookup_code
+    description: Look up the display and properties of a concept in a CodeSystem.
+    source_operation: fhir CodeSystem/$lookup
+  - name: translate_concept
+    description: Translate a code from one code system to another using a ConceptMap.
+    source_operation: fhir ConceptMap/$translate
+  - name: subsumption_closure
+    description: Maintain a transitive-closure table for subsumption testing across concepts.
+    source_operation: fhir $closure
+  - name: search_codesystem
+    description: Search the terminology server for CodeSystem resources.
+    source_operation: fhir CodeSystem search-type
+  - name: search_valueset
+    description: Search the terminology server for ValueSet resources.
+    source_operation: fhir ValueSet search-type
+  - name: search_conceptmap
+    description: Search the terminology server for ConceptMap resources.
+    source_operation: fhir ConceptMap search-type

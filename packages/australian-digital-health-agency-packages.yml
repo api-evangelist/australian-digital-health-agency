@@ -1,0 +1,76 @@
+generated: '2026-07-24'
+method: searched
+source: https://github.com/AuDigitalHealth
+note: >-
+  The Australian Digital Health Agency publishes first-party sample/reference
+  client libraries for its national systems through the AuDigitalHealth GitHub
+  organisation (73 public repositories). These are official vendor libraries that
+  assist conformant software connecting to My Health Record, the Healthcare
+  Identifiers (HI) Service and the National Clinical Terminology Service (NCTS).
+  They are distributed as source on GitHub; some are also published to package
+  registries. Only repositories that are clearly Agency-authored client libraries
+  are listed here as official.
+packages:
+  - language: java
+    registry: github
+    name: mhr-b2b-client-java
+    url: https://github.com/AuDigitalHealth/mhr-b2b-client-java
+    install: git clone https://github.com/AuDigitalHealth/mhr-b2b-client-java.git
+    official: true
+    description: Java client to assist with a My Health Record B2B client.
+  - language: dotnet
+    registry: github
+    name: mhr-b2b-client-dotnet
+    url: https://github.com/AuDigitalHealth/mhr-b2b-client-dotnet
+    install: git clone https://github.com/AuDigitalHealth/mhr-b2b-client-dotnet.git
+    official: true
+    description: The My Health Record (MyHR) B2B Client provides vendors with a sample .NET implementation.
+  - language: javascript
+    registry: github
+    name: mhr-b2b-client-node
+    url: https://github.com/AuDigitalHealth/mhr-b2b-client-node
+    install: git clone https://github.com/AuDigitalHealth/mhr-b2b-client-node.git
+    official: true
+    description: The My Health Record (MyHR) B2B Client provides vendors with a sample Node.js implementation.
+  - language: dotnet
+    registry: github
+    name: mhr-fhir-client-dotnet
+    url: https://github.com/AuDigitalHealth/mhr-fhir-client-dotnet
+    install: git clone https://github.com/AuDigitalHealth/mhr-fhir-client-dotnet.git
+    official: true
+    description: The My Health Record (MyHR) FHIR Client provides vendors with a sample .NET FHIR implementation.
+  - language: java
+    registry: github
+    name: hi-b2b-client-java
+    url: https://github.com/AuDigitalHealth/hi-b2b-client-java
+    install: git clone https://github.com/AuDigitalHealth/hi-b2b-client-java.git
+    official: true
+    description: Java library providing example client implementations for the Healthcare Identifiers (HI) Service.
+  - language: dotnet
+    registry: github
+    name: hi-b2b-client-dotnet
+    url: https://github.com/AuDigitalHealth/hi-b2b-client-dotnet
+    install: git clone https://github.com/AuDigitalHealth/hi-b2b-client-dotnet.git
+    official: true
+    description: .NET vendor library providing HI Client implementations for searching healthcare identifiers.
+  - language: dotnet
+    registry: github
+    name: ncts-syndication-client-dotnet
+    url: https://github.com/AuDigitalHealth/ncts-syndication-client-dotnet
+    install: git clone https://github.com/AuDigitalHealth/ncts-syndication-client-dotnet.git
+    official: true
+    description: .NET syndication client for the National Clinical Terminology Service (NCTS).
+  - language: dotnet
+    registry: github
+    name: clinical-document-library-dotnet
+    url: https://github.com/AuDigitalHealth/clinical-document-library-dotnet
+    install: git clone https://github.com/AuDigitalHealth/clinical-document-library-dotnet.git
+    official: true
+    description: The Clinical Document Library simplifies development of CDA clinical documents for My Health Record.
+  - language: java
+    registry: github
+    name: amt-flat-file-generator
+    url: https://github.com/AuDigitalHealth/amt-flat-file-generator
+    install: git clone https://github.com/AuDigitalHealth/amt-flat-file-generator.git
+    official: true
+    description: Command-line tool wrapping a Java library that generates AMT (Australian Medicines Terminology) flat files.

@@ -1,0 +1,31 @@
+generated: '2026-07-24'
+method: searched
+source: >-
+  fhir/ncts-terminology-server-capabilitystatement.json,
+  https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/,
+  https://developer.digitalhealth.gov.au/
+versioning:
+  scheme: uri-path
+  fhir_version: 4.0.1 (R4)
+  api_path: /integration/R4/
+  terminology_software: Ontoserver 6.26.0 (CSIRO), snomedIndex 2.0.15 / loincIndex 2.0.7 / fhirIndex 2.9.2
+  resource_versioning: versioned-update (per-resource meta.versionId + history/vread)
+  gateway_versions:
+    - My Health Record FHIR Gateway API specification v3.0.0 (B2B)
+    - My Health Record FHIR Gateway v4.0 (Mobile)
+content_release:
+  channel: NCTS National Syndication Server (Atom Publishing Protocol)
+  cadence: SNOMED CT-AU, AMT and LOINC content are released on a regular versioned schedule and distributed via the syndication feed.
+  feed: https://api.healthterminologies.gov.au/syndication/v1/syndication.xml
+deprecation:
+  policy: >-
+    ADHA versions FHIR gateway specifications and terminology content explicitly; superseded
+    specification versions and IG releases are retired through the implementer resource library
+    and the Sparked / HL7 Australia implementation-guide lifecycle. No RFC 8594 Sunset/Deprecation
+    HTTP header advertisement was observed.
+sla:
+  note: Government national-infrastructure service; availability is managed operationally by ADHA. No published numeric uptime SLA was found.
+status_page:
+  found: false
+  note: No public machine-readable status page was located during this round.
+deprecated_operations: []
