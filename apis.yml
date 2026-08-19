@@ -46,7 +46,7 @@ tags:
 - Government
 created: '2026-07-24'
 modified: '2026-07-24'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: australian-digital-health-agency:my-health-record-fhir-gateway
   name: My Health Record FHIR Gateway (B2B)
