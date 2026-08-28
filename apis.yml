@@ -18,6 +18,17 @@ description: >-
   SMART-on-FHIR OAuth2. Production onboarding is gated behind registration, conformance
   testing, and PKI issuance; ADHA aligns to the AU Base / AU Core FHIR implementation
   guides stewarded through HL7 Australia and the Sparked national FHIR accelerator.
+deliveryModel:
+  model: library
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Library · distributed through package registries, no callable service
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: gated
