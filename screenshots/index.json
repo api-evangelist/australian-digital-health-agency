@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "australian-digital-health-agency",
+    "captured_at": "2026-10-11T181234",
+    "source_url": "https://implementer.digitalhealth.gov.au/",
+    "source_type": "Portal",
+    "file": "australian-digital-health-agency-2026-10-11T181234.png",
+    "bytes": 81311,
+    "capture": "playwright-local"
+  }
+]
