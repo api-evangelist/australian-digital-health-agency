@@ -71,6 +71,11 @@ apis:
   tags:
   - FHIR
   - My Health Record
+  - Electronic Health Records
+  - Healthcare
+  tags_raw:
+  - FHIR
+  - My Health Record
   - EHR
   - Healthcare
   properties:
