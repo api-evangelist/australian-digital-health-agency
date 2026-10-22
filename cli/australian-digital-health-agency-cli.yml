@@ -1,0 +1,21 @@
+generated: '2026-10-21'
+method: searched
+source: https://search.maven.org/solrsearch/select?q=g:au.gov.digitalhealth*
+clis:
+  - name: ncts-syndication-client-cli
+    purpose: Command-line client for the NCTS National Syndication Server (Atom feed of terminology releases).
+    install:
+      - 'maven: au.gov.digitalhealth:ncts-syndication-client-cli:1.0.0'
+    source: https://github.com/AuDigitalHealth/ncts-syndication-client
+    version: 1.0.0
+    published: '2018-05-18'
+  - name: amt-flat-file-generator
+    purpose: Command-line tool wrapping a Java library that generates AMT (Australian Medicines Terminology) flat files.
+    install:
+      - git clone https://github.com/AuDigitalHealth/amt-flat-file-generator.git
+    source: https://github.com/AuDigitalHealth/amt-flat-file-generator
+install:
+  - 'maven: au.gov.digitalhealth:ncts-syndication-client-cli'
+  - git clone https://github.com/AuDigitalHealth/amt-flat-file-generator.git
+commands: []
+note: Command surfaces were not read from the repositories in this pass; only the existence, coordinates and purpose are recorded.

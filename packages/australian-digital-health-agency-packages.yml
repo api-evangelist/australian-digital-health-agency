@@ -1,76 +1,226 @@
-generated: '2026-07-24'
+generated: '2026-10-21'
 method: searched
-source: https://github.com/AuDigitalHealth
-note: >-
-  The Australian Digital Health Agency publishes first-party sample/reference
-  client libraries for its national systems through the AuDigitalHealth GitHub
-  organisation (73 public repositories). These are official vendor libraries that
-  assist conformant software connecting to My Health Record, the Healthcare
-  Identifiers (HI) Service and the National Clinical Terminology Service (NCTS).
-  They are distributed as source on GitHub; some are also published to package
-  registries. Only repositories that are clearly Agency-authored client libraries
-  are listed here as official.
+source: https://github.com/AuDigitalHealth, https://api.nuget.org/v3/registration5-gz-semver2/, https://search.maven.org/solrsearch/select?q=g:au.gov.digitalhealth*
+note: The Australian Digital Health Agency publishes first-party sample/reference client libraries for its national systems through the AuDigitalHealth
+  GitHub organisation (73 public repositories). These are official vendor libraries that assist conformant software connecting to My Health Record,
+  the Healthcare Identifiers (HI) Service and the National Clinical Terminology Service (NCTS). They are distributed as source on GitHub; some
+  are also published to package registries. Only repositories that are clearly Agency-authored client libraries are listed here as official.
 packages:
-  - language: java
-    registry: github
-    name: mhr-b2b-client-java
-    url: https://github.com/AuDigitalHealth/mhr-b2b-client-java
-    install: git clone https://github.com/AuDigitalHealth/mhr-b2b-client-java.git
-    official: true
-    description: Java client to assist with a My Health Record B2B client.
-  - language: dotnet
-    registry: github
-    name: mhr-b2b-client-dotnet
-    url: https://github.com/AuDigitalHealth/mhr-b2b-client-dotnet
-    install: git clone https://github.com/AuDigitalHealth/mhr-b2b-client-dotnet.git
-    official: true
-    description: The My Health Record (MyHR) B2B Client provides vendors with a sample .NET implementation.
-  - language: javascript
-    registry: github
-    name: mhr-b2b-client-node
-    url: https://github.com/AuDigitalHealth/mhr-b2b-client-node
-    install: git clone https://github.com/AuDigitalHealth/mhr-b2b-client-node.git
-    official: true
-    description: The My Health Record (MyHR) B2B Client provides vendors with a sample Node.js implementation.
-  - language: dotnet
-    registry: github
-    name: mhr-fhir-client-dotnet
-    url: https://github.com/AuDigitalHealth/mhr-fhir-client-dotnet
-    install: git clone https://github.com/AuDigitalHealth/mhr-fhir-client-dotnet.git
-    official: true
-    description: The My Health Record (MyHR) FHIR Client provides vendors with a sample .NET FHIR implementation.
-  - language: java
-    registry: github
-    name: hi-b2b-client-java
-    url: https://github.com/AuDigitalHealth/hi-b2b-client-java
-    install: git clone https://github.com/AuDigitalHealth/hi-b2b-client-java.git
-    official: true
-    description: Java library providing example client implementations for the Healthcare Identifiers (HI) Service.
-  - language: dotnet
-    registry: github
-    name: hi-b2b-client-dotnet
-    url: https://github.com/AuDigitalHealth/hi-b2b-client-dotnet
-    install: git clone https://github.com/AuDigitalHealth/hi-b2b-client-dotnet.git
-    official: true
-    description: .NET vendor library providing HI Client implementations for searching healthcare identifiers.
-  - language: dotnet
-    registry: github
-    name: ncts-syndication-client-dotnet
-    url: https://github.com/AuDigitalHealth/ncts-syndication-client-dotnet
-    install: git clone https://github.com/AuDigitalHealth/ncts-syndication-client-dotnet.git
-    official: true
-    description: .NET syndication client for the National Clinical Terminology Service (NCTS).
-  - language: dotnet
-    registry: github
-    name: clinical-document-library-dotnet
-    url: https://github.com/AuDigitalHealth/clinical-document-library-dotnet
-    install: git clone https://github.com/AuDigitalHealth/clinical-document-library-dotnet.git
-    official: true
-    description: The Clinical Document Library simplifies development of CDA clinical documents for My Health Record.
-  - language: java
-    registry: github
-    name: amt-flat-file-generator
-    url: https://github.com/AuDigitalHealth/amt-flat-file-generator
-    install: git clone https://github.com/AuDigitalHealth/amt-flat-file-generator.git
-    official: true
-    description: Command-line tool wrapping a Java library that generates AMT (Australian Medicines Terminology) flat files.
+- language: java
+  registry: github
+  name: mhr-b2b-client-java
+  url: https://github.com/AuDigitalHealth/mhr-b2b-client-java
+  install: git clone https://github.com/AuDigitalHealth/mhr-b2b-client-java.git
+  official: true
+  description: Java client to assist with a My Health Record B2B client.
+  version: v8.0.0
+  published: '2026-09-22'
+  version_note: Latest git tag; date is the tagged commit date (GitHub API). No GitHub release objects are published.
+- language: dotnet
+  registry: github
+  name: mhr-b2b-client-dotnet
+  url: https://github.com/AuDigitalHealth/mhr-b2b-client-dotnet
+  install: git clone https://github.com/AuDigitalHealth/mhr-b2b-client-dotnet.git
+  official: true
+  description: The My Health Record (MyHR) B2B Client provides vendors with a sample .NET implementation.
+  version: v2.0.5
+  published: null
+  version_note: Latest git tag (no GitHub release objects); the matching NuGet build is listed separately below.
+- language: javascript
+  registry: github
+  name: mhr-b2b-client-node
+  url: https://github.com/AuDigitalHealth/mhr-b2b-client-node
+  install: git clone https://github.com/AuDigitalHealth/mhr-b2b-client-node.git
+  official: true
+  description: The My Health Record (MyHR) B2B Client provides vendors with a sample Node.js implementation.
+  version: v1.0.0
+  published: '2023-10-19'
+  version_note: Latest git tag; date is the tagged commit date (GitHub API). No GitHub release objects are published.
+- language: dotnet
+  registry: github
+  name: mhr-fhir-client-dotnet
+  url: https://github.com/AuDigitalHealth/mhr-fhir-client-dotnet
+  install: git clone https://github.com/AuDigitalHealth/mhr-fhir-client-dotnet.git
+  official: true
+  description: The My Health Record (MyHR) FHIR Client provides vendors with a sample .NET FHIR implementation.
+  version: v1.0.0
+  published: '2018-07-17'
+  version_note: Latest git tag; date is the tagged commit date (GitHub API). No GitHub release objects are published.
+- language: java
+  registry: github
+  name: hi-b2b-client-java
+  url: https://github.com/AuDigitalHealth/hi-b2b-client-java
+  install: git clone https://github.com/AuDigitalHealth/hi-b2b-client-java.git
+  official: true
+  description: Java library providing example client implementations for the Healthcare Identifiers (HI) Service.
+  version: v8.0.0
+  published: '2026-09-22'
+  version_note: Latest git tag; date is the tagged commit date (GitHub API). No GitHub release objects are published.
+- language: dotnet
+  registry: github
+  name: hi-b2b-client-dotnet
+  url: https://github.com/AuDigitalHealth/hi-b2b-client-dotnet
+  install: git clone https://github.com/AuDigitalHealth/hi-b2b-client-dotnet.git
+  official: true
+  description: .NET vendor library providing HI Client implementations for searching healthcare identifiers.
+  version: v2.0.2
+  published: null
+  version_note: Latest git tag (no GitHub release objects); the matching NuGet build is listed separately below.
+- language: dotnet
+  registry: github
+  name: ncts-syndication-client-dotnet
+  url: https://github.com/AuDigitalHealth/ncts-syndication-client-dotnet
+  install: git clone https://github.com/AuDigitalHealth/ncts-syndication-client-dotnet.git
+  official: true
+  description: .NET syndication client for the National Clinical Terminology Service (NCTS).
+  version: v1.0.1
+  published: '2026-04-13'
+  version_note: Latest git tag; date is the tagged commit date (GitHub API). No GitHub release objects are published.
+- language: dotnet
+  registry: github
+  name: clinical-document-library-dotnet
+  url: https://github.com/AuDigitalHealth/clinical-document-library-dotnet
+  install: git clone https://github.com/AuDigitalHealth/clinical-document-library-dotnet.git
+  official: true
+  description: The Clinical Document Library simplifies development of CDA clinical documents for My Health Record.
+  version: v5.0.2
+  published: null
+  version_note: Latest git tag (no GitHub release objects); the matching NuGet build is listed separately below.
+- language: java
+  registry: github
+  name: amt-flat-file-generator
+  url: https://github.com/AuDigitalHealth/amt-flat-file-generator
+  install: git clone https://github.com/AuDigitalHealth/amt-flat-file-generator.git
+  official: true
+  description: Command-line tool wrapping a Java library that generates AMT (Australian Medicines Terminology) flat files.
+  version: null
+  published: null
+  version_note: No git tags or GitHub releases published on the repository (GitHub API, 2026-10-21); last push 2024-09-03.
+- language: dotnet
+  registry: nuget
+  name: Nehta.VendorLibrary.MHR
+  url: https://www.nuget.org/packages/Nehta.VendorLibrary.MHR
+  install: dotnet add package Nehta.VendorLibrary.MHR
+  official: false
+  version: 2.0.5
+  published: '2026-10-20'
+  description: My Health Record B2B .NET vendor library (built from mhr-b2b-client-dotnet).
+  note: 'NuGet author: Australian Digital Health Agency (api.nuget.org registration).'
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- language: dotnet
+  registry: nuget
+  name: Nehta.VendorLibrary.HI
+  url: https://www.nuget.org/packages/Nehta.VendorLibrary.HI
+  install: dotnet add package Nehta.VendorLibrary.HI
+  official: false
+  version: 2.0.2
+  published: '2026-10-20'
+  description: Healthcare Identifiers Service .NET vendor library (built from hi-b2b-client-dotnet).
+  note: 'NuGet author: Australian Digital Health Agency (api.nuget.org registration).'
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- language: dotnet
+  registry: nuget
+  name: Nehta.VendorLibrary.Common
+  url: https://www.nuget.org/packages/Nehta.VendorLibrary.Common
+  install: dotnet add package Nehta.VendorLibrary.Common
+  official: false
+  version: 5.0.2
+  published: '2026-10-20'
+  description: Common components shared by the Agency .NET vendor libraries.
+  note: 'NuGet author: Australian Digital Health Agency (api.nuget.org registration).'
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- language: dotnet
+  registry: nuget
+  name: Nehta.VendorLibrary.CDA.Generator.v3
+  url: https://www.nuget.org/packages/Nehta.VendorLibrary.CDA.Generator.v3
+  install: dotnet add package Nehta.VendorLibrary.CDA.Generator.v3
+  official: false
+  version: 5.0.2
+  published: '2026-10-20'
+  description: CDA clinical document generator (Clinical Document Library).
+  note: 'NuGet author: Australian Digital Health Agency (api.nuget.org registration).'
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- language: dotnet
+  registry: nuget
+  name: Nehta.VendorLibrary.CDAPackage
+  url: https://www.nuget.org/packages/Nehta.VendorLibrary.CDAPackage
+  install: dotnet add package Nehta.VendorLibrary.CDAPackage
+  official: false
+  version: 2.0.2
+  published: '2026-10-20'
+  description: CDA package library for My Health Record document upload.
+  note: 'NuGet author: Australian Digital Health Agency (api.nuget.org registration).'
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- language: dotnet
+  registry: nuget
+  name: Nehta.VendorLibrary.SM.SMD
+  url: https://www.nuget.org/packages/Nehta.VendorLibrary.SM.SMD
+  install: dotnet add package Nehta.VendorLibrary.SM.SMD
+  official: false
+  version: 1.1.2
+  published: null
+  description: Secure Messaging (SMD) .NET vendor library.
+  note: 'Version from NuGet search API (author: Australian Digital Health Agency); publish date not retrieved.'
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- language: dotnet
+  registry: nuget
+  name: Nehta.VendorLibrary.SM.ELS
+  url: https://www.nuget.org/packages/Nehta.VendorLibrary.SM.ELS
+  install: dotnet add package Nehta.VendorLibrary.SM.ELS
+  official: false
+  version: 1.1.0
+  published: null
+  description: Secure Messaging Endpoint Location Service .NET vendor library.
+  note: 'Version from NuGet search API (author: Australian Digital Health Agency); publish date not retrieved.'
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- language: dotnet
+  registry: nuget
+  name: Nehta.VendorLibrary.CdaExtractor
+  url: https://www.nuget.org/packages/Nehta.VendorLibrary.CdaExtractor
+  install: dotnet add package Nehta.VendorLibrary.CdaExtractor
+  official: false
+  version: 2.0.0
+  published: null
+  description: CDA extractor .NET vendor library.
+  note: 'Version from NuGet search API (author: Australian Digital Health Agency); publish date not retrieved.'
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- language: java
+  registry: maven
+  name: au.gov.digitalhealth:ncts-syndication-client
+  url: https://central.sonatype.com/artifact/au.gov.digitalhealth/ncts-syndication-client
+  official: true
+  version: 1.0.0
+  published: '2018-05-18'
+  description: NCTS syndication client (Java).
+  note: Latest version from search.maven.org. Timestamp 1526624765000 (2018-05-18). Maven Central publishes the newer Java clients only under
+    GitHub tags (v8.0.0) not at these coordinates, so this coordinate is stale.
+- language: java
+  registry: maven
+  name: au.gov.digitalhealth:ncts-syndication-client-cli
+  url: https://central.sonatype.com/artifact/au.gov.digitalhealth/ncts-syndication-client-cli
+  official: true
+  version: 1.0.0
+  published: '2018-05-18'
+  description: NCTS syndication client command-line tool.
+  note: Latest version from search.maven.org. Timestamp 1526624765000 (2018-05-18). Maven Central publishes the newer Java clients only under
+    GitHub tags (v8.0.0) not at these coordinates, so this coordinate is stale.
+- language: java
+  registry: maven
+  name: au.gov.nehta:hi-b2b-client
+  url: https://central.sonatype.com/artifact/au.gov.nehta/hi-b2b-client
+  official: true
+  version: 1.6.2
+  published: null
+  description: HI Service Java B2B client (legacy NEHTA groupId).
+  note: Latest version from search.maven.org. Publish date not retrieved. Maven Central publishes the newer Java clients only under GitHub tags
+    (v8.0.0) not at these coordinates, so this coordinate is stale.
+- language: java
+  registry: maven
+  name: au.gov.nehta:clinical-document-library
+  url: https://central.sonatype.com/artifact/au.gov.nehta/clinical-document-library
+  official: true
+  version: 2.0.2
+  published: null
+  description: Clinical Document Library Java (legacy NEHTA groupId).
+  note: Latest version from search.maven.org. Publish date not retrieved. Maven Central publishes the newer Java clients only under GitHub tags
+    (v8.0.0) not at these coordinates, so this coordinate is stale.

@@ -1,16 +1,18 @@
-generated: '2026-07-24'
+name: Australian Digital Health Agency agent skills
+generated: '2026-10-21'
 method: generated
-source: fhir/ncts-terminology-server-capabilitystatement.json + NCTS syndication docs
+source: fhir/ncts-terminology-server-capabilitystatement.json
+note: >-
+  Skills are grounded only in operations advertised by the harvested NCTS FHIR Terminology Server
+  CapabilityStatement (identified as <ResourceType>.<interaction> or $<operation>). No OpenAPI exists for
+  ADHA. Earlier skills for ValueSet/$expand, $validate-code and syndication were removed on 2026-10-21
+  because no contract in this repo advertises those operations.
 skills:
-  - file: australian-digital-health-agency-expand-valueset.md
-    name: Expand a value set on the NCTS FHIR terminology server
-    api: fhir/ncts-terminology-server-capabilitystatement.json
-    operations: [ValueSet/$expand]
-  - file: australian-digital-health-agency-validate-code.md
-    name: Validate a code against a value set (NCTS)
-    api: fhir/ncts-terminology-server-capabilitystatement.json
-    operations: [ValueSet/$validate-code, CodeSystem/$validate-code]
-  - file: australian-digital-health-agency-syndicate-terminology.md
-    name: Download terminology releases from the NCTS syndication feed
-    api: NCTS National Syndication Server
-    operations: [GET /syndication/v1/syndication.xml]
+- file: australian-digital-health-agency-find-terminology-resources.md
+  name: find-terminology-resources
+  api: NCTS FHIR Terminology Server
+  operations: [CodeSystem.search-type, CodeSystem.read, ValueSet.search-type, ValueSet.read, ConceptMap.search-type, ConceptMap.read]
+- file: australian-digital-health-agency-maintain-closure-table.md
+  name: maintain-closure-table
+  api: NCTS FHIR Terminology Server
+  operations: [$closure]

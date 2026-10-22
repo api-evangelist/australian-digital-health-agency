@@ -1,0 +1,14 @@
+name: Australian Digital Health Agency pricing
+generated: '2026-10-21'
+method: none
+audience: unclear
+pricing_basis: none
+published: false
+plan_count: 0
+plans: []
+delivery:
+  mode: managed
+note: >-
+  No pricing or plans page was found for the Agency's APIs. Access to My Health Record, HI Service and NCTS is
+  via registration/conformance (NASH certificates, NCTS organisation accounts and licence acceptance on
+  www.healthterminologies.gov.au), not a priced tier. No fee schedule was found.

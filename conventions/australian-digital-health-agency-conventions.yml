@@ -1,38 +1,51 @@
-generated: '2026-07-24'
+generated: '2026-10-21'
 method: searched
-source: >-
-  fhir/ncts-terminology-server-capabilitystatement.json + HL7 FHIR R4 RESTful API conventions
-note: >-
-  Cross-cutting request/response semantics for the ADHA FHIR surfaces. The NCTS
-  terminology server follows the HL7 FHIR R4 RESTful conventions confirmed by its
-  CapabilityStatement; the My Health Record gateways follow the same FHIR conventions
-  over NASH PKI mutual TLS.
+source: fhir/ncts-terminology-server-capabilitystatement.json + HL7 FHIR R4 RESTful API conventions, wsdl/mhr-b2b/wsdl/External/B2B_RemoveDocumentInterface.wsdl,
+  wsdl/hi-service/
+note: Cross-cutting request/response semantics for the ADHA FHIR surfaces. The NCTS terminology server follows the
+  HL7 FHIR R4 RESTful conventions confirmed by its CapabilityStatement; the My Health Record gateways follow the
+  same FHIR conventions over NASH PKI mutual TLS.
 authentication:
   terminology_server: SMART-on-FHIR OAuth2 (Bearer access token)
   national_record_systems: NASH SHA-2 PKI client certificate over mutual TLS
 content_negotiation:
-  formats: [application/fhir+json, application/fhir+xml]
+  formats:
+  - application/fhir+json
+  - application/fhir+xml
   default: application/fhir+json
   header: Accept
   param: _format
 pagination:
   style: fhir-bundle
-  request_params: [_count]
+  request_params:
+  - _count
   response: FHIR searchset Bundle with link relations (self, next, previous) for page traversal.
 search:
-  common_params: [_id, _lastUpdated, _tag, _security, _sort, _count]
-  resource_params: [url, version, name, status, system, identifier, publisher, context]
+  common_params:
+  - _id
+  - _lastUpdated
+  - _tag
+  - _security
+  - _sort
+  - _count
+  resource_params:
+  - url
+  - version
+  - name
+  - status
+  - system
+  - identifier
+  - publisher
+  - context
 concurrency_and_idempotency:
   optimistic_locking: true
   etag: true
   version_read: vread supported (readHistory true, versioning versioned-update).
   conditional_update: PUT with If-Match against the resource version (ETag) — a repeated identical update is idempotent.
   conditional_create: If-None-Exist header prevents duplicate creation of an already-existing resource.
-  note: >-
-    FHIR write semantics are idempotent by construction — PUT (update) to a known id is
-    idempotent, and conditional create/update via If-None-Exist / If-Match ETag guard against
-    duplicate or lost-update effects. There is no vendor idempotency-key header; the FHIR
-    version/ETag mechanism is the idempotency contract.
+  note: FHIR write semantics are idempotent by construction — PUT (update) to a known id is idempotent, and conditional
+    create/update via If-None-Exist / If-Match ETag guard against duplicate or lost-update effects. There is no
+    vendor idempotency-key header; the FHIR version/ETag mechanism is the idempotency contract.
 versioning:
   scheme: uri-path
   api_version: R4 (FHIR 4.0.1) under /integration/R4/
@@ -46,3 +59,32 @@ cross_links:
   errors: errors/australian-digital-health-agency-problem-types.yml
   lifecycle: lifecycle/australian-digital-health-agency-lifecycle.yml
   scopes: scopes/australian-digital-health-agency-scopes.yml
+idempotency:
+  coverage: none
+  header: null
+  note: No idempotency-key mechanism is published. The NCTS terminology server CapabilityStatement (fhir/ncts-terminology-server-capabilitystatement.json)
+    lists FHIR create/update/patch/delete interactions on one resource type, guarded by FHIR versioning (If-Match
+    / If-None-Exist) rather than a replay key; the My Health Record B2B SOAP writes (wsdl/mhr-b2b) and HI Service
+    writes (wsdl/hi-service) carry no idempotency key in their WSDL/XSD.
+reversibility:
+  status: documented
+  surfaces:
+  - surface: My Health Record B2B document upload
+    reversal: removeDocument
+    operation: removeDocument
+    contract: wsdl/mhr-b2b/wsdl/External/B2B_RemoveDocumentInterface.wsdl
+    reason_codes_from_schema:
+    - Withdrawn
+    - ElectToRemove
+    - IncorrectIdentity
+    reason_codes_source: wsdl/mhr-b2b/schema/External/PCEHR_RemoveDocument.xsd
+    window: null
+    note: The contract defines a removeDocument operation with reason codes; no time window for removal was found
+      in the material read, so none is asserted.
+  - surface: NCTS terminology server (FHIR)
+    reversal: FHIR delete / versioned update (history + vread)
+    window: null
+    note: Interactions listed in the CapabilityStatement; no window stated.
+  - surface: HI Service (WSDL)
+    reversal: null
+    note: No reversal operation identified among the HI Service WSDL operation names (create/update/merge/resolve/notify).

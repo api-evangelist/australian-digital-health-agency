@@ -1,0 +1,26 @@
+generated: '2026-10-21'
+method: searched
+source: https://www.healthterminologies.gov.au/ncts-website-terms-of-use/
+coverage_note: >-
+  The pre-flight dossier had no legal_pages (www.digitalhealth.gov.au timed out, verdict unreachable). The
+  Agency's Privacy Policy at https://www.digitalhealth.gov.au/about-us/policies-privacy-and-reporting/privacy-policy
+  and implementer.digitalhealth.gov.au/ncts/ncts-registration-terms both timed out again on 2026-10-21 (no
+  HTTP status). Only the NCTS Website Terms of Use page on www.healthterminologies.gov.au (an Agency-run site)
+  could be read. Signals the unread Privacy Policy may cover are not recorded here.
+signals:
+  data_subject_request:
+    url: https://www.healthterminologies.gov.au/ncts-website-terms-of-use/
+    section: National Clinical Terminology Service Registration Terms
+    rights_named: [access, correction, privacy complaint]
+    evidence:
+    - source: https://www.healthterminologies.gov.au/ncts-website-terms-of-use/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: >-
+        For more information on how you can access and seek correction of the information held about you by
+        the Agency, how privacy complaints can be made and how the Agency deals with such complaints, please
+        see the Privacy Policy.
+    note: >-
+      The NCTS registration terms say individuals can access and seek correction of the personal information
+      the Agency holds about them, and can make privacy complaints. The procedure itself is in the Agency
+      Privacy Policy, which could not be fetched, so no channel or SLA is recorded.

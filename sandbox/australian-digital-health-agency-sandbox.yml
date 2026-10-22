@@ -1,0 +1,19 @@
+generated: '2026-10-21'
+method: searched
+source: https://developer.digitalhealth.gov.au/node/5660
+description: >-
+  The Agency runs a Software Vendor Test (SVT) environment for My Health Record. Per the
+  developer-portal pages surfaced by search (web search, 2026-10-21): "The My Health Record SVT
+  environment allows software vendors to build and test the B2B Gateway web services for
+  interactions with the My Health Record system." Vendors express interest by contacting Agency
+  support and receive a welcome pack (product details form, conformance vendor declaration form)
+  describing the connection and conformance-testing process (Software Vendor Guide to the
+  Connection Process, DH-3739:2022 v1.8).
+docs: https://developer.digitalhealth.gov.au/node/5660
+access: gated — request via Agency support; no self-serve sign-up.
+test_values: []
+note: >-
+  developer.digitalhealth.gov.au 301-redirects to implementer.digitalhealth.gov.au, which timed out
+  (HTTP 000) from the pipeline network on 2026-10-21, so the page text was read through a web-search
+  summary, not fetched directly. No test endpoints, test credentials or test certificates are
+  published openly; none are recorded.

@@ -1,0 +1,23 @@
+generated: '2026-10-21'
+method: none
+source:
+- https://zapier.com/apps/australian-digital-health-agency/integrations
+- https://n8n.io/integrations/australian-digital-health-agency/
+- https://composio.dev/toolkits/australian-digital-health-agency
+- https://monid.ai/tools/australian-digital-health-agency
+checked:
+- https://zapier.com/apps/my-health-record/integrations (404)
+- https://n8n.io/integrations/my-health-record/ (404)
+- https://www.make.com/en/integrations/my-health-record (403)
+- fhir/ncts-terminology-server-capabilitystatement.json
+- wsdl/ (MHR B2B, HI Service, SMD, ELS contracts)
+- https://composio.dev/toolkits/australian-digital-health-agency
+- https://monid.ai/tools/australian-digital-health-agency
+- https://n8n.io/integrations/australian-digital-health-agency/
+- https://zapier.com/apps/australian-digital-health-agency/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
+note: No marketplace listing, partner page or contract operation naming a third-party service was found. The Agency's
+  systems are integrated by conformant clinical software through registration and conformance testing.

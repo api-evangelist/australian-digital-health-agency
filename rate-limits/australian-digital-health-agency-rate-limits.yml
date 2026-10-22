@@ -1,0 +1,14 @@
+name: Australian Digital Health Agency rate limits
+generated: '2026-10-21'
+method: none
+limit_count: 0
+limits: []
+checked:
+  - https://www.healthterminologies.gov.au/
+  - https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/national-terminology-server/
+  - https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/
+note: >-
+  No published numeric rate limits or rate-limit headers were found. The National Terminology Server
+  pages (via search) describe it as a single national instance not suited to runtime integration for
+  availability and performance reasons, recommending a local Ontoserver instead; that is guidance, not a
+  stated limit. implementer.digitalhealth.gov.au (where these pages now redirect) timed out from the pipeline network.

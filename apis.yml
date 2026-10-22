@@ -1,7 +1,11 @@
 aid: australian-digital-health-agency
+
 url: https://raw.githubusercontent.com/api-evangelist/australian-digital-health-agency/refs/heads/main/apis.yml
+
 name: Australian Digital Health Agency
+
 kind: company
+
 description: >-
   The Australian Digital Health Agency (ADHA) is the Australian Government statutory
   agency responsible for national digital health infrastructure and standards. It
@@ -18,6 +22,7 @@ description: >-
   SMART-on-FHIR OAuth2. Production onboarding is gated behind registration, conformance
   testing, and PKI issuance; ADHA aligns to the AU Base / AU Core FHIR implementation
   guides stewarded through HL7 Australia and the Sparked national FHIR accelerator.
+
 deliveryModel:
   model: library
   open_source: false
@@ -29,6 +34,7 @@ deliveryModel:
   - none
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: free
   onboarding: gated
@@ -42,7 +48,9 @@ accessModel:
   - documentation
   generated: '2026-07-24'
   method: derived
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+
+image: https://avatars.githubusercontent.com/u/35711308?v=4
+
 tags:
 - Healthcare
 - Australia
@@ -55,9 +63,81 @@ tags:
 - e-Prescribing
 - Terminology
 - Government
+
 created: '2026-07-24'
-modified: '2026-07-24'
+
+modified: '2026-10-21'
+
 specificationVersion: '0.23'
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
+common:
+- type: CLI
+  url: cli/australian-digital-health-agency-cli.yml
+- type: ChangeLog
+  url: changelog/australian-digital-health-agency-changelog.yml
+- type: Sandbox
+  url: sandbox/australian-digital-health-agency-sandbox.yml
+- type: Deprecation
+  url: lifecycle/australian-digital-health-agency-lifecycle.yml
+- type: Hosts
+  url: hosts/australian-digital-health-agency-hosts.yml
+- type: Vendors
+  url: vendors/australian-digital-health-agency-vendors.yml
+- type: DomainSecurity
+  url: security/australian-digital-health-agency-domain-security.yml
+- type: Website
+  url: https://www.digitalhealth.gov.au/
+- type: DeveloperPortal
+  url: https://implementer.digitalhealth.gov.au/
+  note: Digital Health Implementer Hub, which replaced the former Developer Portal (developer.digitalhealth.gov.au now 301-redirects here; probed 2026-10-21).
+- type: Documentation
+  url: https://implementer.digitalhealth.gov.au/resources
+- type: APIReference
+  url: https://implementer.digitalhealth.gov.au/fhir-resources
+- type: GettingStarted
+  url: https://implementer.digitalhealth.gov.au/resources/guides
+- type: Authentication
+  url: https://implementer.digitalhealth.gov.au/resources/services/national-authentication-service-for-health-nash
+- type: Support
+  url: mailto:help@digitalhealth.gov.au
+- type: GitHubOrganization
+  url: https://github.com/AuDigitalHealth
+- type: PrivacyPolicy
+  url: https://implementer.digitalhealth.gov.au/privacy-policy
+- type: TermsOfService
+  url: https://www.digitalhealth.gov.au/terms-of-use
+- type: Packages
+  url: packages/australian-digital-health-agency-packages.yml
+- type: SDKs
+  url: packages/australian-digital-health-agency-packages.yml
+- type: WellKnown
+  url: well-known/australian-digital-health-agency-well-known.yml
+- type: Authentication
+  url: authentication/australian-digital-health-agency-authentication.yml
+- type: OAuthScopes
+  url: scopes/australian-digital-health-agency-scopes.yml
+- type: Conformance
+  url: conformance/australian-digital-health-agency-conformance.yml
+- type: Conventions
+  url: conventions/australian-digital-health-agency-conventions.yml
+- type: Idempotency
+  url: conventions/australian-digital-health-agency-conventions.yml
+- type: ErrorCatalog
+  url: errors/australian-digital-health-agency-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/australian-digital-health-agency-lifecycle.yml
+- type: X-MCPServerCandidate
+  url: mcp/australian-digital-health-agency-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
+- type: DataModel
+  url: data-model/australian-digital-health-agency-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+
 apis:
 - aid: australian-digital-health-agency:my-health-record-fhir-gateway
   name: My Health Record FHIR Gateway (B2B)
@@ -90,7 +170,7 @@ apis:
     Health Record system to retrieve documents and health information on behalf of
     individuals. Registration and a developer welcome pack are required, and the
     interface is FHIR-based.
-  humanURL: https://developer.digitalhealth.gov.au/developer-guide/introduction-my-health-record-fhir-gateway-developer-guide-1
+  humanURL: https://implementer.digitalhealth.gov.au/developer-guide/introduction-my-health-record-fhir-gateway-developer-guide-1
   tags:
   - FHIR
   - My Health Record
@@ -98,9 +178,9 @@ apis:
   - Healthcare
   properties:
   - type: Documentation
-    url: https://developer.digitalhealth.gov.au/developer-guide/introduction-my-health-record-fhir-gateway-developer-guide-1
+    url: https://implementer.digitalhealth.gov.au/developer-guide/introduction-my-health-record-fhir-gateway-developer-guide-1
   - type: APIReference
-    url: https://developer.digitalhealth.gov.au/resources/my-health-record-fhir-gateway-v4-0
+    url: https://implementer.digitalhealth.gov.au/resources/my-health-record-fhir-gateway-v4-0
 - aid: australian-digital-health-agency:ncts-fhir-terminology-server
   name: NCTS FHIR Terminology Server
   description: >-
@@ -110,7 +190,7 @@ apis:
     resources with $expand, $lookup, $validate-code, $translate and $closure operations
     over SNOMED CT-AU, AMT and LOINC. Authenticated with SMART-on-FHIR OAuth2. A live
     FHIR CapabilityStatement was harvested from the /metadata endpoint.
-  humanURL: https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/
+  humanURL: https://implementer.digitalhealth.gov.au/ncts/ncts-apis
   baseURL: https://api.healthterminologies.gov.au/integration/R4/fhir
   tags:
   - FHIR
@@ -123,7 +203,7 @@ apis:
   - type: SmartConfiguration
     url: fhir/ncts-terminology-server-smart-configuration.json
   - type: Documentation
-    url: https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/
+    url: https://implementer.digitalhealth.gov.au/ncts/ncts-apis
   - type: APIReference
     url: https://api.healthterminologies.gov.au/integration/R4/fhir/metadata
 - aid: australian-digital-health-agency:ncts-syndication-server
@@ -133,7 +213,7 @@ apis:
     interrogating terminology content feeds and downloading FHIR terminology resource
     bundles (SNOMED CT-AU, AMT, LOINC, RCPA SPIA and more). The syndication feed is
     generated by the Australian Digital Health Agency and served as an Atom feed.
-  humanURL: https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/
+  humanURL: https://implementer.digitalhealth.gov.au/ncts/ncts-apis
   baseURL: https://api.healthterminologies.gov.au/syndication/v1
   tags:
   - Terminology
@@ -141,7 +221,7 @@ apis:
   - FHIR
   properties:
   - type: Documentation
-    url: https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/
+    url: https://implementer.digitalhealth.gov.au/ncts/ncts-apis
   - type: APIReference
     url: https://api.healthterminologies.gov.au/syndication/v1/syndication.xml
 - aid: australian-digital-health-agency:electronic-prescribing
@@ -174,56 +254,164 @@ apis:
   properties:
   - type: Documentation
     url: https://implementer.digitalhealth.gov.au/resources/services/healthcare-identifiers-service-hi
-common:
-- type: DomainSecurity
-  url: security/australian-digital-health-agency-domain-security.yml
-- type: Website
-  url: https://www.digitalhealth.gov.au/
-- type: DeveloperPortal
-  url: https://developer.digitalhealth.gov.au/
-- type: Portal
-  url: https://implementer.digitalhealth.gov.au/
-- type: Documentation
-  url: https://implementer.digitalhealth.gov.au/resources
-- type: APIReference
-  url: https://implementer.digitalhealth.gov.au/fhir-resources
-- type: GettingStarted
-  url: https://implementer.digitalhealth.gov.au/resources/guides
-- type: Authentication
-  url: https://implementer.digitalhealth.gov.au/resources/services/national-authentication-service-for-health-nash
-- type: Support
-  url: mailto:help@digitalhealth.gov.au
-- type: GitHubOrganization
-  url: https://github.com/AuDigitalHealth
-- type: Packages
-  url: packages/australian-digital-health-agency-packages.yml
-- type: SDKs
-  url: packages/australian-digital-health-agency-packages.yml
-- type: WellKnown
-  url: well-known/australian-digital-health-agency-well-known.yml
-- type: Authentication
-  url: authentication/australian-digital-health-agency-authentication.yml
-- type: OAuthScopes
-  url: scopes/australian-digital-health-agency-scopes.yml
-- type: Conformance
-  url: conformance/australian-digital-health-agency-conformance.yml
-- type: Conventions
-  url: conventions/australian-digital-health-agency-conventions.yml
-- type: Idempotency
-  url: conventions/australian-digital-health-agency-conventions.yml
-- type: ErrorCatalog
-  url: errors/australian-digital-health-agency-problem-types.yml
-- type: Lifecycle
-  url: lifecycle/australian-digital-health-agency-lifecycle.yml
-- type: X-MCPServerCandidate
-  url: mcp/australian-digital-health-agency-mcp.yml
-  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
-- type: LLMsTxt
-  url: llms/australian-digital-health-agency-llms.txt
-- type: DataModel
-  url: data-model/australian-digital-health-agency-data-model.yml
-- type: AgentSkill
-  url: skills/_index.yml
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerCreateProvisionalIHI-3.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerCreateUnverifiedIHI-3.0.2.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerCreateVerifiedIHI-4.0.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerMergeProvisionalIHI-3.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerNotifyDuplicateIHI-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerNotifyReplicaIHI-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerResolveProvisionalIHI-3.0.2.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerSearchIHI-3.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerSearchIHIBatchAsync-3.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerSearchIHIBatchSync-3.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerUpdateIHI-3.0.2.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerUpdateIHI-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ConsumerUpdateProvisionalIHI-3.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderBatchAsyncSearchForProviderIndividual-5.1.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderBatchAsyncSearchForProviderOrganisation-5.1.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderManageProviderAdministrativeIndividual-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderManageProviderDirectoryEntry-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderManageProviderOrganisation-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderManageTdsProviderIndividual-5.1.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderReadProviderAdministrativeIndividual-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderReadProviderOrganisation-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderReadReferenceData-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderSearchForProviderIndividual-5.0.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderSearchForProviderOrganisation-5.0.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderSearchHIProviderDirectoryForIndividual-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderSearchHIProviderDirectoryForOrganisation-3.2.0.wsdl
+  - type: WSDL
+    url: wsdl/hi-service/HI_ProviderSearchTdsProviderIndividual-5.1.0.wsdl
+- aid: australian-digital-health-agency:my-health-record-b2b-gateway-soap
+  name: My Health Record B2B Gateway (SOAP)
+  description: >-
+    The SOAP/XML business-to-business interface to the My Health Record system,
+    covering record access (DoesPCEHRExist, GainPCEHRAccess), IHE XDS.b document
+    upload, retrieval and removal, view services (audit, change history, individual
+    details, representative list, consolidated views) and template services. The
+    WSDLs are published verbatim from the agency's AuDigitalHealth/mhr-b2b-client-dotnet
+    repository; their soap:address values are placeholders, and production endpoints
+    are issued during registration and conformance testing. Calls are signed and
+    authenticated with NASH PKI certificates over TLS.
+  humanURL: https://github.com/AuDigitalHealth/mhr-b2b-client-dotnet
+  tags:
+  - SOAP
+  - My Health Record
+  - Electronic Health Records
+  - Healthcare
+  properties:
+  - type: GitHubRepository
+    url: https://github.com/AuDigitalHealth/mhr-b2b-client-dotnet
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_DocumentRegistry.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_DocumentRepository.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_GetAuditView.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_GetChangeHistoryView.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_GetIndividualDetailsView.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_GetRepresentativeList.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_GetTemplate.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_GetView.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_PCEHRProfile.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_RegisterPCEHR.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_RemoveDocument.wsdl
+  - type: WSDL
+    url: wsdl/mhr-b2b/wsdl/External/B2B_SearchTemplate.wsdl
+- aid: australian-digital-health-agency:secure-message-delivery
+  name: Secure Message Delivery (SMD) and Endpoint Location Service (ELS)
+  description: >-
+    The national secure messaging specifications for exchanging sealed clinical
+    messages between healthcare organisations: Sealed Message Delivery, Sealed
+    Immediate Message Delivery, Sealed Message Retrieval, Transport Response Delivery
+    and Retrieval, plus the Endpoint Location Service (lookup and publish of service
+    interactions). The WSDLs are published by the agency in its AuDigitalHealth GitHub
+    organisation (smd-*-wsdl-tls-java and els-b2b-client-dotnet); their soap:address
+    values are placeholders, since these services are implemented by secure messaging
+    providers rather than a single agency-hosted endpoint.
+  humanURL: https://github.com/AuDigitalHealth/smd-b2b-client-dotnet
+  tags:
+  - SOAP
+  - Secure Messaging
+  - Healthcare
+  properties:
+  - type: GitHubRepository
+    url: https://github.com/AuDigitalHealth/smd-b2b-client-dotnet
+  - type: WSDL
+    url: wsdl/smd-sealed-immediate-message-delivery/smd-SealedImmediateMessageDelivery-TLS-2010.wsdl
+  - type: WSDL
+    url: wsdl/smd-sealed-message-delivery/smd-SealedMessageDelivery-TLS-2010.wsdl
+  - type: WSDL
+    url: wsdl/smd-sealed-message-retrieval/smd-SealedMessageRetrieval-TLS-2010.wsdl
+  - type: WSDL
+    url: wsdl/smd-transport-response-delivery/smd-TransportResponseDelivery-TLS-2010.wsdl
+  - type: WSDL
+    url: wsdl/smd-transport-response-retrieval/smd-TransportResponseRetrieval-TLS-2010.wsdl
+  - type: WSDL
+    url: wsdl/els/endpointLocationService-1.3/wsdl/els-Lookup-2010.wsdl
+  - type: WSDL
+    url: wsdl/els/endpointLocationService-1.3/wsdl/els-Lookup-TLS-2010.wsdl
+  - type: WSDL
+    url: wsdl/els/endpointLocationService-1.3/wsdl/els-Publish-2010.wsdl
+  - type: WSDL
+    url: wsdl/els/endpointLocationService-1.3/wsdl/els-Publish-TLS-2010.wsdl
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Website www.digitalhealth.gov.au is confirmed by the provider's own GitHub org (AuDigitalHealth, blog field). The Akamai edge for *.digitalhealth.gov.au accepted TCP but returned no bytes within 60s to curl (IPv4/HTTP1.1) and WebFetch on 2026-10-21. That is an edge policy or outage, not a dead page, so those pointers were kept. developer.digitalhealth.gov.au 301-redirects to the Implementer Hub, and the pointers were moved to the redirect targets.
+  evidence:
+  - url: https://api.github.com/orgs/AuDigitalHealth
+    status: 200
+  - url: https://github.com/AuDigitalHealth
+    status: 200
+  - url: https://www.digitalhealth.gov.au/
+    status: timeout
+  - url: https://developer.digitalhealth.gov.au/
+    status: 301
+  - url: https://www.healthterminologies.gov.au/implementing-in-software/terminology-as-a-service/ncts-apis/
+    status: 301
+  - url: https://api.healthterminologies.gov.au/integration/R4/fhir/metadata
+    status: 200
+  - url: https://api.healthterminologies.gov.au/syndication/v1/syndication.xml
+    status: 200
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 142
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

@@ -1,0 +1,104 @@
+generated: '2026-10-21'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 7
+  own: 3
+  other_domain: 3
+  platform: 1
+  roles:
+  - api
+  - other
+  - portal
+  - source
+  - website
+hosts:
+- host: api.gov.au
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.gov.au
+  role: api
+  relation: other-domain
+- host: api.healthterminologies.gov.au
+  found_by:
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types: []
+  serves:
+  - api
+  - cdn
+  vendor: cloudfront
+  registrable_domain: healthterminologies.gov.au
+  role: api
+  relation: other-domain
+- host: developer.digitalhealth.gov.au
+  found_by:
+  - probed
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: digitalhealth.gov.au
+  role: portal
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  - apis[]
+  types:
+  - GitHubOrganization
+  serves:
+  - docs
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: implementer.digitalhealth.gov.au
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - DeveloperPortal
+  - Documentation
+  - APIReference
+  - GettingStarted
+  - Authentication
+  - PrivacyPolicy
+  serves:
+  - docs
+  registrable_domain: digitalhealth.gov.au
+  role: portal
+  relation: own
+- host: www.digitalhealth.gov.au
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - TermsOfService
+  serves:
+  - cdn
+  vendor: akamai
+  registrable_domain: digitalhealth.gov.au
+  role: website
+  relation: own
+- host: www.healthterminologies.gov.au
+  found_by:
+  - probed
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: healthterminologies.gov.au
+  role: other
+  relation: other-domain

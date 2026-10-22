@@ -1,0 +1,29 @@
+generated: '2026-10-21'
+method: searched
+source: https://implementer.digitalhealth.gov.au/resources/my-health-record-fhir-gateway-release-note-v5-0
+scheme: major.minor document versions per specification (My Health Record FHIR Gateway release notes)
+current_version: '5.0'
+entries:
+  - version: '5.0'
+    date: '2026-03-05'
+    product: My Health Record FHIR Gateway
+    breaking: false
+    highlights:
+      - Change to existing viewing delay period for Diagnostic Imaging Reports on the My Health Record.
+    url: https://implementer.digitalhealth.gov.au/resources/my-health-record-fhir-gateway-release-note-v5-0
+  - version: '4.0'
+    date: '2025-10-09'
+    product: My Health Record FHIR Gateway
+    breaking: false
+    highlights:
+      - 'Release rationale: change to existing viewing delay period for Pathology Reports.'
+      - API specification DH-4184:2025 v4.0 editorial update; Error Mapping (DH-4021:2024) and Data Mapping (DH-4020:2024) v3.0 unchanged.
+    url: https://implementer.digitalhealth.gov.au/resources/my-health-record-fhir-gateway-release-note-v4-0
+older_release_notes:
+  - https://implementer.digitalhealth.gov.au/resources/my-health-record-fhir-gateway-release-note-v3-0
+  - https://implementer.digitalhealth.gov.au/resources/my-health-record-fhir-gateway-release-note-v2-5
+  - https://implementer.digitalhealth.gov.au/resources/my-health-record-fhir-gateway-release-note-v2-4
+note: >-
+  Entries were read through a web-search summary of the release-note pages; implementer.digitalhealth.gov.au
+  timed out (HTTP 000) from the pipeline network on 2026-10-21. "breaking: false" reflects that the notes
+  describe viewing-delay/editorial changes; no breaking change was stated.
